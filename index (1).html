@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/L Geography Recording Center | 2026 • 2027 • 2028</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="earth-loader">
+                <div class="earth"></div>
+                <div class="orbit"></div>
+            </div>
+            <h2 class="loading-text">Loading Geography Center...</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">A/L Geography</span>
+                    <span class="logo-sub">Recording Center</span>
+                </div>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#recordings" class="nav-link">Recordings</a>
+                <a href="#notes" class="nav-link">Notes</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="notification-bell" id="notificationBell" aria-label="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button class="close-notifications" id="closeNotifications"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon"><i class="fas fa-video"></i></div>
+                <div class="notification-content">
+                    <p>New lesson uploaded: "Climate Change & Global Warming"</p>
+                    <span class="notification-time">2 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon"><i class="fas fa-file-alt"></i></div>
+                <div class="notification-content">
+                    <p>Notes updated for Lesson 08: Population Dynamics</p>
+                    <span class="notification-time">5 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon"><i class="fas fa-calendar"></i></div>
+                <div class="notification-content">
+                    <p>Revision session scheduled for this Sunday at 9 AM</p>
+                    <span class="notification-time">1 day ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="world-map"></div>
+            <div class="gradient-overlay"></div>
+            <div class="particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>Specially for 2026 • 2027 • 2028 A/L Students</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Welcome to</span>
+                <span class="title-line highlight">A/L Geography</span>
+                <span class="title-line">Recording Center</span>
+            </h1>
+            <p class="hero-subtitle">
+                Exclusive Geography class recordings for 2026, 2027 & 2028 A/L students. 
+                Learn anytime, anywhere with expert teachers.
+            </p>
+            <div class="hero-buttons">
+                <a href="#recordings" class="btn btn-primary">
+                    <i class="fas fa-play-circle"></i>
+                    Watch Recordings
+                </a>
+                <a href="#notes" class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    Download Notes
+                </a>
+            </div>
+            <div class="hero-stats-mini">
+                <div class="mini-stat">
+                    <i class="fas fa-users"></i>
+                    <span>500+ Students</span>
+                </div>
+                <div class="mini-stat">
+                    <i class="fas fa-video"></i>
+                    <span>150+ Recordings</span>
+                </div>
+                <div class="mini-stat">
+                    <i class="fas fa-file-alt"></i>
+                    <span>50+ Notes</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- Batch Selection -->
+    <section class="batches-section" id="batches">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Choose Your Batch</span>
+                <h2 class="section-title">Select Your A/L Year</h2>
+                <p class="section-desc">Access recordings and notes tailored for your examination year</p>
+            </div>
+            <div class="batches-grid">
+                <div class="batch-card" data-batch="2026" onclick="selectBatch('2026')">
+                    <div class="batch-icon">📘</div>
+                    <div class="batch-year">2026</div>
+                    <div class="batch-label">A/L Batch</div>
+                    <div class="batch-count">52 Lessons</div>
+                    <div class="batch-progress">
+                        <div class="progress-bar" style="width: 75%"></div>
+                    </div>
+                    <div class="batch-status">Ongoing</div>
+                    <div class="batch-hover">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="batch-card featured" data-batch="2027" onclick="selectBatch('2027')">
+                    <div class="featured-badge">Popular</div>
+                    <div class="batch-icon">📗</div>
+                    <div class="batch-year">2027</div>
+                    <div class="batch-label">A/L Batch</div>
+                    <div class="batch-count">58 Lessons</div>
+                    <div class="batch-progress">
+                        <div class="progress-bar" style="width: 60%"></div>
+                    </div>
+                    <div class="batch-status">Active</div>
+                    <div class="batch-hover">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="batch-card" data-batch="2028" onclick="selectBatch('2028')">
+                    <div class="batch-icon">📙</div>
+                    <div class="batch-year">2028</div>
+                    <div class="batch-label">A/L Batch</div>
+                    <div class="batch-count">45 Lessons</div>
+                    <div class="batch-progress">
+                        <div class="progress-bar" style="width: 40%"></div>
+                    </div>
+                    <div class="batch-status">New</div>
+                    <div class="batch-hover">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recordings Section -->
+    <section class="recordings-section" id="recordings">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Video Library</span>
+                <h2 class="section-title">Lesson Recordings</h2>
+                <p class="section-desc">Browse through our comprehensive collection of geography lessons</p>
+            </div>
+
+            <!-- Search & Filter -->
+            <div class="search-filter-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search lessons by name or topic...">
+                    <button class="search-clear" id="searchClear"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Lessons</button>
+                    <button class="filter-btn" data-filter="physical">Physical Geography</button>
+                    <button class="filter-btn" data-filter="human">Human Geography</button>
+                    <button class="filter-btn" data-filter="practical">Practical Geography</button>
+                    <button class="filter-btn" data-filter="map">Map Reading</button>
+                    <button class="filter-btn" data-filter="revision">Revision</button>
+                </div>
+            </div>
+
+            <!-- Batch Tabs -->
+            <div class="batch-tabs">
+                <button class="batch-tab active" data-batch-tab="2026">2026 Batch</button>
+                <button class="batch-tab" data-batch-tab="2027">2027 Batch</button>
+                <button class="batch-tab" data-batch-tab="2028">2028 Batch</button>
+            </div>
+
+            <!-- Lessons Grid -->
+            <div class="lessons-grid" id="lessonsGrid">
+                <!-- Lessons will be populated by JavaScript -->
+            </div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No lessons found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Uploads -->
+    <section class="latest-section" id="latest">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Fresh Content</span>
+                <h2 class="section-title">Latest Uploads</h2>
+                <p class="section-desc">Newly added lessons this week</p>
+            </div>
+            <div class="latest-grid" id="latestGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Students Enrolled</div>
+                    <div class="stat-suffix">+</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-video"></i></div>
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-label">Video Recordings</div>
+                    <div class="stat-suffix">+</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Study Notes</div>
+                    <div class="stat-suffix">+</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">A/L Batches</div>
+                    <div class="stat-suffix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section class="notes-section" id="notes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Study Materials</span>
+                <h2 class="section-title">Download Notes</h2>
+                <p class="section-desc">Comprehensive notes for all geography topics</p>
+            </div>
+            <div class="notes-grid" id="notesGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Reviews -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Students Say</h2>
+                <p class="section-desc">Hear from our successful students</p>
+            </div>
+            <div class="reviews-slider" id="reviewsSlider">
+                <div class="reviews-track" id="reviewsTrack">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="reviews-dots" id="reviewsDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Support</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Find answers to common questions</p>
+            </div>
+            <div class="faq-grid" id="faqGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-img-wrapper">
+                        <div class="about-img-bg"></div>
+                        <div class="about-img-content">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">Empowering Future Geographers</h2>
+                    <p>
+                        A/L Geography Recording Center is dedicated to providing high-quality educational 
+                        resources for Advanced Level Geography students in Sri Lanka. Our platform offers 
+                        comprehensive video recordings, detailed notes, and interactive learning materials 
+                        designed to help students excel in their examinations.
+                    </p>
+                    <p>
+                        With experienced teachers and a structured curriculum, we ensure that every student 
+                        has access to the best geography education, regardless of their location.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert Teachers</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>HD Video Quality</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Regular Updates</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Access</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Location</h3>
+                        <p>Colombo, Sri Lanka</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <h3>Email</h3>
+                        <p>info@geographyrecordings.lk</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <h3>Phone</h3>
+                        <p>+94 77 123 4567</p>
+                    </div>
+                    <div class="contact-social">
+                        <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            <span class="form-error" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="batch">Your Batch</label>
+                            <select id="batch" name="batch">
+                                <option value="">Select your batch</option>
+                                <option value="2026">A/L 2026</option>
+                                <option value="2027">A/L 2027</option>
+                                <option value="2028">A/L 2028</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+                            <span class="form-error" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-video">
+                <div class="video-placeholder" id="videoPlaceholder">
+                    <i class="fas fa-play-circle"></i>
+                    <p>Video Player</p>
+                    <span>Click play to start watching</span>
+                </div>
+            </div>
+            <div class="modal-info">
+                <h3 id="modalTitle">Lesson Title</h3>
+                <div class="modal-meta">
+                    <span id="modalTeacher"><i class="fas fa-chalkboard-teacher"></i> Teacher Name</span>
+                    <span id="modalDuration"><i class="fas fa-clock"></i> 45:00</span>
+                    <span id="modalDate"><i class="fas fa-calendar"></i> 2026-01-15</span>
+                </div>
+                <p id="modalDesc">Lesson description goes here...</p>
+                <div class="modal-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-play"></i> Watch Now
+                    </button>
+                    <button class="btn btn-secondary" id="modalDownload">
+                        <i class="fas fa-download"></i> Download Notes
+                    </button>
+                    <button class="btn btn-outline favorite-btn" id="modalFavorite">
+                        <i class="far fa-heart"></i> Add to Favorites
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <i class="fas fa-globe-asia"></i>
+                            <div>
+                                <span class="footer-logo-main">A/L Geography</span>
+                                <span class="footer-logo-sub">Recording Center</span>
+                            </div>
+                        </div>
+                        <p>Your trusted partner for A/L Geography success. Quality education accessible to every student.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-link whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#recordings">Recordings</a></li>
+                            <li><a href="#notes">Notes</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Physical Geography</a></li>
+                            <li><a href="#">Human Geography</a></li>
+                            <li><a href="#">Map Reading</a></li>
+                            <li><a href="#">Past Papers</a></li>
+                            <li><a href="#">Revision Notes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</li>
+                            <li><i class="fas fa-envelope"></i> info@geographyrecordings.lk</li>
+                            <li><i class="fas fa-phone"></i> +94 77 123 4567</li>
+                            <li><i class="fab fa-youtube"></i> A/L Geography Center</li>
+                            <li><i class="fab fa-whatsapp"></i> +94 77 123 4567</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 A/L Geography Recording Center. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> for A/L Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
