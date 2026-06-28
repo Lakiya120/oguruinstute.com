@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ඇතුළත් වන්න | A/L Geography Recording Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="earth-loader">
+                <div class="earth"></div>
+                <div class="orbit"></div>
+            </div>
+            <h2 class="loading-text">පිටුව පූරණය වෙමින්...</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-page">
+        <!-- Left Panel - Visual -->
+        <div class="login-visual">
+            <div class="visual-bg">
+                <div class="world-map-bg"></div>
+                <div class="gradient-overlay"></div>
+                <div class="particles" id="particles"></div>
+            </div>
+            <div class="visual-content">
+                <div class="visual-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">A/L Geography</span>
+                        <span class="logo-sub">Recording Center</span>
+                    </div>
+                </div>
+                <h1 class="visual-title">ඔබේ භූගෝල විද්‍යා<br>සාර්ථකත්වයට මඟ</h1>
+                <p class="visual-desc">
+                    2026, 2027 සහ 2028 A/L ශිෂ්‍යයන් සඳහා විශේෂිත වීඩියෝ පාඩම් සහ සටහන්. 
+                    ඕනෑම වේලාවක, ඕනෑම තැනක සිට අධ්‍යයනය කරන්න.
+                </p>
+                <div class="visual-features">
+                    <div class="vfeature">
+                        <i class="fas fa-video"></i>
+                        <span>150+ පාඩම්</span>
+                    </div>
+                    <div class="vfeature">
+                        <i class="fas fa-file-alt"></i>
+                        <span>50+ සටහන්</span>
+                    </div>
+                    <div class="vfeature">
+                        <i class="fas fa-users"></i>
+                        <span>500+ ශිෂ්‍යයන්</span>
+                    </div>
+                    <div class="vfeature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>24/7 ප්‍රවේශය</span>
+                    </div>
+                </div>
+                <div class="visual-badges">
+                    <span class="vbatch">📘 A/L 2026</span>
+                    <span class="vbatch">📗 A/L 2027</span>
+                    <span class="vbatch">📙 A/L 2028</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel - Form -->
+        <div class="login-form-panel">
+            <div class="form-container">
+                <!-- Toggle Tabs -->
+                <div class="form-tabs">
+                    <button class="form-tab active" data-tab="login">
+                        <i class="fas fa-sign-in-alt"></i>
+                        ඇතුළත් වන්න
+                    </button>
+                    <button class="form-tab" data-tab="register">
+                        <i class="fas fa-user-plus"></i>
+                        ලියාපදිංචි වන්න
+                    </button>
+                </div>
+
+                <!-- Login Form -->
+                <form class="auth-form active" id="loginForm" data-form="login">
+                    <div class="form-header">
+                        <h2>නැවත සාදරයෙන් පිළිගනිමු!</h2>
+                        <p>ඔබගේ ගිණුමට ඇතුළත් වන්න</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginEmail">
+                            <i class="fas fa-envelope"></i>
+                            ඊමේල් ලිපිනය
+                        </label>
+                        <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                        <span class="form-error" id="loginEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">
+                            <i class="fas fa-lock"></i>
+                            මුරපදය
+                        </label>
+                        <div class="password-wrapper">
+                            <input type="password" id="loginPassword" placeholder="ඔබගේ මුරපදය" required>
+                            <button type="button" class="toggle-password" data-target="loginPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="form-error" id="loginPasswordError"></span>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            මතක තබා ගන්න
+                        </label>
+                        <a href="#" class="forgot-link" onclick="showForgotPassword(event)">මුරපදය අමතකද?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text">ඇතුළත් වන්න</span>
+                        <span class="btn-loader">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+
+                    <div class="divider">
+                        <span>හෝ</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            Google සමඟින්
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook සමඟින්
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Register Form -->
+                <form class="auth-form" id="registerForm" data-form="register">
+                    <div class="form-header">
+                        <h2>නව ගිණුමක් සාදන්න</h2>
+                        <p>අපගේ පාඩම් සමඟ ඔබේ A/L සාර්ථකත්වය ආරම්භ කරන්න</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="regFirstName">
+                                <i class="fas fa-user"></i>
+                                මුල් නම
+                            </label>
+                            <input type="text" id="regFirstName" placeholder="මුල් නම" required>
+                            <span class="form-error" id="regFirstNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="regLastName">
+                                <i class="fas fa-user"></i>
+                                අවසාන නම
+                            </label>
+                            <input type="text" id="regLastName" placeholder="අවසාන නම" required>
+                            <span class="form-error" id="regLastNameError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">
+                            <i class="fas fa-envelope"></i>
+                            ඊමේල් ලිපිනය
+                        </label>
+                        <input type="email" id="regEmail" placeholder="you@example.com" required>
+                        <span class="form-error" id="regEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPhone">
+                            <i class="fas fa-phone"></i>
+            දුරකථන අංකය
+                        </label>
+                        <input type="tel" id="regPhone" placeholder="07X XXX XXXX" required>
+                        <span class="form-error" id="regPhoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regBatch">
+                            <i class="fas fa-graduation-cap"></i>
+                            A/L බැච් එක
+                        </label>
+                        <select id="regBatch" required>
+                            <option value="">ඔබගේ A/L වසර තෝරන්න</option>
+                            <option value="2026">📘 A/L 2026</option>
+                            <option value="2027">📗 A/L 2027</option>
+                            <option value="2028">📙 A/L 2028</option>
+                        </select>
+                        <span class="form-error" id="regBatchError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regSchool">
+                            <i class="fas fa-school"></i>
+                            පාසල
+                        </label>
+                        <input type="text" id="regSchool" placeholder="ඔබගේ පාසලේ නම">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPassword">
+                            <i class="fas fa-lock"></i>
+                            මුරපදය
+                        </label>
+                        <div class="password-wrapper">
+                            <input type="password" id="regPassword" placeholder="මුරපදයක් සාදන්න" required>
+                            <button type="button" class="toggle-password" data-target="regPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <span class="strength-text" id="strengthText">මුරපදයේ ශක්තිය</span>
+                        </div>
+                        <span class="form-error" id="regPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regConfirmPassword">
+                            <i class="fas fa-lock"></i>
+                            මුරපදය තහවුරු කරන්න
+                        </label>
+                        <div class="password-wrapper">
+                            <input type="password" id="regConfirmPassword" placeholder="මුරපදය නැවත ඇතුළත් කරන්න" required>
+                            <button type="button" class="toggle-password" data-target="regConfirmPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="form-error" id="regConfirmPasswordError"></span>
+                    </div>
+
+                    <label class="terms-check">
+                        <input type="checkbox" id="termsCheck" required>
+                        <span class="checkmark"></span>
+                        මම <a href="#">සේවා කොන්දේසි</a> සහ <a href="#">පෞද්ගලිකත්ව ප්‍රතිපත්තිය</a> එකඟ වෙමි
+                    </label>
+
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text">ලියාපදිංචි වන්න</span>
+                        <span class="btn-loader">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                </form>
+
+                <!-- Forgot Password Form -->
+                <form class="auth-form" id="forgotForm" data-form="forgot">
+                    <div class="form-header">
+                        <button type="button" class="back-btn" onclick="showLoginForm(event)">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2>මුරපදය අමතකද?</h2>
+                        <p>ඔබගේ ඊමේල් ලිපිනය ඇතුළත් කරන්න. මුරපදය නැවත සැකසීමේ සබැඳියක් එවනු ලැබේ.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="forgotEmail">
+                            <i class="fas fa-envelope"></i>
+                            ඊමේල් ලිපිනය
+                        </label>
+                        <input type="email" id="forgotEmail" placeholder="you@example.com" required>
+                        <span class="form-error" id="forgotEmailError"></span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text">සබැඳිය යවන්න</span>
+                        <span class="btn-loader">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>සාර්ථකයි!</h3>
+                    <p id="successText">ඔබගේ ගිණුම සාර්ථකව සාදන ලදී.</p>
+                    <button class="btn-submit" onclick="redirectToHome()">
+                        ප්‍රධාන පිටුවට යන්න
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login-script.js"></script>
+</body>
+</html>
